@@ -1,24 +1,23 @@
-# README
+# Skeleton Rails app with direct upload to S3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Uses the [s3_direct_upload](https://github.com/waynehoover/s3_direct_upload) gem.
+* Set the AWS env variables defined in the s3 direct upload initializer.
+* Edit CORS settings for your bucket
+* Bundle
+* Run
+* Go to `/projects/`
 
-Things you may want to cover:
+## CORS config looks something like this
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+<CORSConfiguration>
+  <CORSRule>
+    <AllowedOrigin>http://your-domain-here.com</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <MaxAgeSeconds>3000</MaxAgeSeconds>
+    <AllowedHeader>*</AllowedHeader>
+  </CORSRule>
+</CORSConfiguration>
+```
